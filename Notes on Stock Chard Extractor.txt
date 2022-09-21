@@ -1,0 +1,31 @@
+dim dt as new datatable
+dim z as integer = 0
+for x = 0 as integer in webbrowser1.document.getelementsbytag("table").count - 1
+	*use Xth datagrid*
+	for y = 0 as integer in webbrowser1.document.getelementsbytag("table").item(x).getelementsbytag("tr").count - 1
+		do while z < webbrowser1.document.getelementsbytag("table").item(x).getelementsbytag("tr").item(y).getelementsbytag("td").count - 1
+			dt.columns.add(z)
+			z = z + 1
+		loop
+	next
+	datagridX.datasource = dt
+	dt = new datatable
+next
+
+for x = 0 as integer in webbrowser1.document.getelementsbytag("table").count - 1
+	*use Xth datagrid*
+	for y = 0 as integer in webbrowser1.document.getelementsbytag("table").item(x).getelementsbytag("tr").count - 1
+		for z = 0 as integer in webbrowser1.document.getelementsbytag("table").item(x).getelementsbytag("tr").item(y).getelementsbytag("td").count - 1
+			*populate datarow*
+		next
+		*add populated data row*
+	next
+	datagridX.datasource = dt
+	dt = new datatable
+next
+
+
+i think there will always be 4 tables
+i think the first table will always have 2 columns
+and the other three will have about 10 columns
+
